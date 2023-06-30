@@ -547,38 +547,50 @@
                 </div>
                 <!-- End page header -->
                 
+                <!-- Begin contact section -->
                 <div class="contact wow bounceInRight" data-wow-delay="0.4s">
-                <div class="container">
-                    <div class="row justify-content-center text-center">
-                    <div class="col-md-12">
-                        <div class="contact-form text-center"> <!-- Added 'text-center' class -->
-                        <h4 style="font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Write to Us</h4>
-                        <form role="form">
-                            <div class="form-group">
-                            <input type="text" class="form-control input-lg white-text-input" placeholder="Your Name" required>
+                    <div class="container">
+                    	<div class="row">
+                        
+                            <div class="col-sm-6">
+                                <div class="contact-info">
+                                    <h4>Our Address</h4>
+                                    <ul class="contact-address">
+			                            <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; 100 Limpbiscayne Blvd. (North) 17st Floor ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New World Tower New York ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New York, USA, 33148</li>
+			                            <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
+			                            <li><i class="fa fa-print"></i>&nbsp; 1 -234 -456 -7890</li>
+			                            <li><i class="fa fa-envelope"></i> gemmamelo0412@gmail.com</li>
+			                            <li><i class="fa fa-skype"></i> Unika-Design</li>
+			                        </ul>
+                                </div>
                             </div>
-                            <div class="form-group">
-                            <input type="email" class="form-control input-lg white-text-input" placeholder="E-mail" required>
+			    <div class="col-sm-6">
+                                <div class="contact-form">
+                                    <h4>Write to us</h4>
+                                    <form id="contactForm">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-lg" placeholder="Your Name" id="nameInput" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control input-lg" placeholder="E-mail" id="emailInput" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control input-lg" placeholder="Subject" id="subjectInput" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control input-lg" rows="5" placeholder="Message" id="messageInput" required></textarea>
+                                        </div>
+                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s" onclick="generateMailto()">Send</button>
+                                    </form>
+                                </div>	
                             </div>
-                            <div class="form-group">
-                            <input type="text" class="form-control input-lg white-text-input" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group">
-                            <textarea class="form-control input-lg white-text-input" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
-                        </form>
-                        </div>
-                    </div>
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
+                                                                                 
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
                 </div>
             </section>
             <!-- End contact section -->
-  
-  
-  
-                
+      
             <!-- Begin footer -->
             <footer class="text-off-white">
                 
@@ -622,6 +634,20 @@
             }
         </script>
         <!--//DownloadCV-->
+
+	    <script>
+            function generateMailto() {
+                var name = document.getElementById('nameInput').value;
+                var email = document.getElementById('emailInput').value;
+                var subject = document.getElementById('subjectInput').value;
+                var message = document.getElementById('messageInput').value;
+                
+                var mailtoLink = 'mailto:mgemma3830@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message);
+                
+                // Open the mailto link in a new window or tab
+                window.open(mailtoLink);
+            }
+        </script>
 
 		<!-- Theme JS -->
 		<script src="js/theme.js"></script>
